@@ -2,13 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Home, User, Briefcase, Code, Mail } from 'lucide-react';
 
-interface DockNavigationProps {
-  activeSection: string;
-  onNavigate: (section: string) => void;
-}
-
-const DockNavigation = ({ activeSection, onNavigate }: DockNavigationProps) => {
-  const dockRef = useRef<HTMLDivElement>(null);
+const DockNavigation = ({ activeSection, onNavigate }) => {
+  const dockRef = useRef(null);
 
   const navItems = [
     { id: 'hero', icon: Home, label: 'Home' },
