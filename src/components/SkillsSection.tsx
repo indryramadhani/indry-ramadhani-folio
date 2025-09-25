@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const SkillsSection = () => {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const skillsRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
 
   const skills = [
     { name: 'HTML', level: 95, color: 'from-orange-500 to-red-500' },

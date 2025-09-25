@@ -6,9 +6,9 @@ import { ExternalLink, Github } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const ProjectsSection = () => {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const projectsRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
 
   const projects = [
     {

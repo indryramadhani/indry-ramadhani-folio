@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import profileImage from '@/assets/profile-indry.jpg';
 
 const ProfileCard = () => {
-  const cardRef = useRef(null);
-  const imageRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     if (!cardRef.current || !imageRef.current) return;
@@ -78,7 +79,7 @@ const ProfileCard = () => {
           <div className="profile-glow">
             <img
               ref={imageRef}
-              src="/indry.jpg"
+              src={profileImage}
               alt="Indry Ramadhani Islamiyah"
               className="w-32 h-32 rounded-full object-cover border-4 border-primary/30 relative z-10"
             />

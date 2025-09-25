@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import LiquidBackground from '@/components/LiquidBackground';
 import DockNavigation from '@/components/DockNavigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import SkillsSection from '@/components/SkillsSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import ContactSection from '@/components/ContactSection';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const DefaultLayout = ({ children }) => {
+const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Initialize smooth scrolling and section detection
@@ -24,12 +30,18 @@ const DefaultLayout = ({ children }) => {
       });
     });
 
+    // Initial page load animation
+    gsap.fromTo(containerRef.current, 
+      { opacity: 0 },
+      { opacity: 1, duration: 1, ease: "power2.out" }
+    );
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       gsap.to(window, {
@@ -40,14 +52,41 @@ const DefaultLayout = ({ children }) => {
     }
   };
 
+  const scrollToNext = () => {
+    scrollToSection('about');
+  };
+
   return (
-    <div className="relative min-h-screen font-inter">
+    <div ref={containerRef} className="relative min-h-screen font-inter">
       {/* Liquid Background */}
       <LiquidBackground />
 
       {/* Main Content */}
       <main className="relative z-10">
-        {children}
+        {/* Hero Section */}
+        <section id="hero" className="min-h-screen">
+          <HeroSection onScrollToNext={scrollToNext} />
+        </section>
+
+        {/* About Section */}
+        <section id="about">
+          <AboutSection />
+        </section>
+
+        {/* Skills Section */}
+        <section id="skills">
+          <SkillsSection />
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact">
+          <ContactSection />
+        </section>
 
         {/* Footer */}
         <footer className="py-8 px-4 border-t border-border/20">
@@ -84,4 +123,4 @@ const DefaultLayout = ({ children }) => {
   );
 };
 
-export default DefaultLayout;
+export default Index;

@@ -3,10 +3,14 @@ import { gsap } from 'gsap';
 import { ChevronDown } from 'lucide-react';
 import ProfileCard from './ProfileCard';
 
-const HeroSection = ({ onScrollToNext }) => {
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const ctaRef = useRef(null);
+interface HeroSectionProps {
+  onScrollToNext: () => void;
+}
+
+const HeroSection = ({ onScrollToNext }: HeroSectionProps) => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline();

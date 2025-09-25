@@ -6,9 +6,9 @@ import { Code2, Lightbulb, Target, Heart } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
-  const sectionRef = useRef(null);
-  const titleRef = useRef(null);
-  const contentRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const highlights = [
     {
