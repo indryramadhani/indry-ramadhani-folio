@@ -63,6 +63,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      backgroundImage: {
+        'gradient-liquid': 'var(--gradient-liquid)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-glow': 'var(--gradient-glow)',
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       keyframes: {
         "accordion-down": {
           from: {

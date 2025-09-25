@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Liquid Ether Portfolio Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Liquid Ether Color Palette */
+    --background: 220 30% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Liquid Ether Primary - Electric Blue */
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 30% 5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Liquid Ether Secondary - Deep Purple */
+    --secondary: 270 60% 40%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Liquid Ether Accent - Cyan Glow */
+    --accent: 180 100% 60%;
+    --accent-foreground: 220 30% 5%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 210 100% 60%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Liquid Ether Gradients */
+    --gradient-liquid: linear-gradient(135deg, hsl(210 100% 60% / 0.8), hsl(270 60% 40% / 0.8), hsl(180 100% 60% / 0.8));
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 8% / 0.9), hsl(220 20% 12% / 0.9));
+    --gradient-glow: radial-gradient(circle at center, hsl(210 100% 60% / 0.3), transparent 70%);
+    
+    /* Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Glass Effect */
+    --glass-bg: hsl(220 25% 8% / 0.1);
+    --glass-border: hsl(210 100% 60% / 0.2);
+    --glass-shadow: 0 8px 32px hsl(210 100% 60% / 0.1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,83 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Components */
+  .glass-card {
+    @apply backdrop-blur-lg border;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .liquid-gradient {
+    background: var(--gradient-liquid);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Dock Navigation */
+  .dock-item {
+    @apply relative flex items-center justify-center w-12 h-12 rounded-xl glass-card transition-all duration-300 hover:w-14 hover:h-14 cursor-pointer;
+    transition: var(--transition-bounce);
+  }
+
+  .dock-item::before {
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+    content: '';
+    background: var(--gradient-glow);
+  }
+
+  .dock-item:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Profile Card Effects */
+  .profile-glow {
+    @apply relative;
+  }
+
+  .profile-glow::before {
+    @apply absolute -inset-1 rounded-full opacity-75 blur-sm;
+    content: '';
+    background: var(--gradient-liquid);
+    animation: pulse 2s infinite;
+  }
+
+  /* Liquid Animation Keyframes */
+  @keyframes liquid-flow {
+    0%, 100% { transform: translateX(-50%) translateY(-50%) rotate(0deg) scale(1); }
+    25% { transform: translateX(-50%) translateY(-50%) rotate(90deg) scale(1.1); }
+    50% { transform: translateX(-50%) translateY(-50%) rotate(180deg) scale(1); }
+    75% { transform: translateX(-50%) translateY(-50%) rotate(270deg) scale(1.1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  /* Animation Classes */
+  .animate-liquid {
+    animation: liquid-flow 20s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow-pulse 3s ease-in-out infinite;
   }
 }
