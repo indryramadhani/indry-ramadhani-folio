@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('hero');
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Initialize smooth scrolling and section detection
@@ -41,7 +41,7 @@ const Index = () => {
     };
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       gsap.to(window, {

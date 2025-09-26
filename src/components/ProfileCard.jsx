@@ -3,8 +3,8 @@ import { gsap } from 'gsap';
 import profileImage from '@/assets/profile-indry.jpg';
 
 const ProfileCard = () => {
-  const cardRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const cardRef = useRef(null);
+  const imageRef = useRef(null);
 
   useEffect(() => {
     if (!cardRef.current || !imageRef.current) return;

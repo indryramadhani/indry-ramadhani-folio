@@ -6,9 +6,9 @@ import { Mail, Github, Linkedin, MapPin, Phone } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
 
   const contactInfo = [
     {
