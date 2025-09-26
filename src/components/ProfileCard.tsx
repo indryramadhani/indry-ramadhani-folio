@@ -107,7 +107,7 @@ const ProfileCard = () => {
             <div className="text-xs text-muted-foreground">Technologies</div>
           </div>
           <div className="border-l border-border/50 pl-4">
-            <div className="text-lg font-bold text-accent">3+</div>
+            <div className="text-lg font-bold text-accent">1+</div>
             <div className="text-xs text-muted-foreground">Years Learning</div>
           </div>
           <div className="border-l border-border/50 pl-4">
