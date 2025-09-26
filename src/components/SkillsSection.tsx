@@ -14,6 +14,7 @@ const SkillsSection = () => {
     { name: 'CSS', level: 90, color: 'from-blue-500 to-cyan-500' },
     { name: 'JavaScript', level: 85, color: 'from-yellow-400 to-orange-500' },
     { name: 'React', level: 88, color: 'from-cyan-400 to-blue-500' },
+    { name: 'C++', level: 75, color: 'from-red-600 to-pink-600' },
     { name: 'Bootstrap', level: 80, color: 'from-purple-500 to-pink-500' },
     { name: 'Tailwind CSS', level: 92, color: 'from-teal-400 to-cyan-500' },
     { name: 'Daisy UI', level: 75, color: 'from-green-400 to-teal-500' },
@@ -137,6 +138,7 @@ const SkillsSection = () => {
                 {skill.name === 'JavaScript' && "Core programming language for web development"}
                 {skill.name === 'HTML' && "Semantic markup and accessibility focused"}
                 {skill.name === 'CSS' && "Responsive design and modern layouts"}
+                {skill.name === 'C++' && "Object-oriented programming and data structures"}
                 {skill.name === 'Tailwind CSS' && "Utility-first CSS framework expertise"}
                 {skill.name === 'Bootstrap' && "Rapid prototyping and responsive components"}
                 {skill.name === 'Daisy UI' && "Component library and design systems"}

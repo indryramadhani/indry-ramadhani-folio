@@ -14,23 +14,16 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "indry.islamiyah@email.com",
-      href: "mailto:indry.islamiyah@email.com",
+      value: "indry02829@gmail.com",
+      href: "mailto:indry02829@gmail.com",
       gradient: "from-red-500 to-pink-500"
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/indry-ramadhani",
-      href: "https://github.com/indry-ramadhani",
+      value: "github.com/indryramadhani",
+      href: "https://github.com/indryramadhani",
       gradient: "from-gray-700 to-gray-900"
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "linkedin.com/in/indry-ramadhani",
-      href: "https://linkedin.com/in/indry-ramadhani",
-      gradient: "from-blue-600 to-blue-800"
     },
     {
       icon: MapPin,

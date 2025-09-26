@@ -118,10 +118,10 @@ const AboutSection = () => {
             
             <div className="glass-card p-8 rounded-3xl">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I specialize in modern web technologies including React, JavaScript, and various CSS frameworks. 
-                What excites me most is the ability to transform ideas into interactive digital experiences 
-                that users can enjoy and benefit from. I'm always eager to learn new technologies and 
-                take on challenging projects that push my boundaries.
+                With 2 years of learning experience in programming, I specialize in modern web technologies including 
+                React, JavaScript, and various CSS frameworks. What excites me most is the ability to transform 
+                ideas into interactive digital experiences that users can enjoy and benefit from. I'm always 
+                eager to learn new technologies and take on challenging projects that push my boundaries.
               </p>
             </div>
           </div>

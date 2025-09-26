@@ -12,28 +12,12 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce platform built with React and PHP backend, featuring responsive design and smooth animations.",
-      technologies: ["React", "PHP", "Tailwind CSS", "JavaScript"],
-      gradient: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website showcasing modern design principles with GSAP animations and liquid backgrounds.",
-      technologies: ["React", "GSAP", "Tailwind CSS", "TypeScript"],
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Task Management App",
-      description: "A productivity app with drag-and-drop functionality, built using React and modern CSS frameworks.",
-      technologies: ["React", "Bootstrap", "JavaScript", "CSS"],
-      gradient: "from-green-500 to-teal-500"
-    },
-    {
-      title: "Landing Page Collection",
-      description: "Collection of responsive landing pages demonstrating various design patterns and component libraries.",
-      technologies: ["HTML", "CSS", "Daisy UI", "Bootstrap"],
-      gradient: "from-orange-500 to-red-500"
+      title: "Dirgahayu Indonesia Maju",
+      description: "A patriotic website celebrating Indonesian independence with modern design and interactive elements, showcasing national pride and unity.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      gradient: "from-red-500 to-white",
+      liveUrl: "https://indryramadhani.github.io/dirgahayuindonesiamaju/",
+      githubUrl: "https://github.com/indryramadhani/dirgahayuindonesiamaju"
     }
   ];
 
@@ -112,7 +96,7 @@ const ProjectsSection = () => {
           </span>
         </h2>
 
-        <div ref={projectsRef} className="grid md:grid-cols-2 gap-8">
+        <div ref={projectsRef} className="flex justify-center">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -144,14 +128,24 @@ const ProjectsSection = () => {
 
                 {/* Action buttons */}
                 <div className="flex gap-4">
-                  <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-xl text-sm font-medium hover:bg-primary/10 transition-colors duration-300">
+                  <a 
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 glass-card rounded-xl text-sm font-medium hover:bg-primary/10 transition-colors duration-300"
+                  >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
-                  </button>
-                  <button className="flex items-center gap-2 px-4 py-2 glass-card rounded-xl text-sm font-medium hover:bg-accent/10 transition-colors duration-300">
+                  </a>
+                  <a 
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 glass-card rounded-xl text-sm font-medium hover:bg-accent/10 transition-colors duration-300"
+                  >
                     <Github className="w-4 h-4" />
                     Source Code
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -165,11 +159,16 @@ const ProjectsSection = () => {
         {/* Call to action */}
         <div className="text-center mt-16">
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            These are just a few examples of my work. I'm always working on new projects and learning new technologies.
+            This is my featured project showcasing my skills in web development. I'm always working on new projects and learning new technologies.
           </p>
-          <button className="px-8 py-4 bg-gradient-liquid rounded-2xl font-semibold text-background hover:scale-105 transition-transform duration-300">
-            View All Projects
-          </button>
+          <a 
+            href="https://github.com/indryramadhani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-gradient-liquid rounded-2xl font-semibold text-background hover:scale-105 transition-transform duration-300"
+          >
+            View More on GitHub
+          </a>
         </div>
       </div>
     </section>
